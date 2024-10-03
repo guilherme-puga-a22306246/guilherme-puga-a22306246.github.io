@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quizz</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Quizz sobre Pau, França</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimedia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+        </nav>
+        <img src="images/pau.jpeg" alt="Cidade de Pau">
+        
+        <main>
+            <h2>Quizz</h2>
+            <form method="get" action="https://postman-echo.com/get">
+                
+                <!-- Área para Dados Pessoais -->
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" size="30" maxlength="50" required autofocus><br><br>
+
+                    <label for="sobrenome">Apelido:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu apelido" size="30" maxlength="50" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@example.com" autocomplete="email" required><br><br>
+                </fieldset>
+                
+                <!-- Quizz sobre Pau, França -->
+                <fieldset>
+                    <legend>Teste seus conhecimentos sobre Pau</legend>
+
+                    <label for="paisagem">O que torna Pau famoso?</label><br>
+                    <textarea id="paisagem" name="paisagem" placeholder="Descreva a principal atração de Pau..." maxlength="200" rows="4" cols="50"></textarea><br><br>
+                    
+                    <label for="monumento">Qual é o monumento mais famoso de Pau?</label>
+                    <select id="monumento" name="monumento">
+                        <option value="castelo_pau">Castelo de Pau</option>
+                        <option value="palacio_beaumont">Palácio Beaumont</option>
+                        <option value="parque">Parque Nacional dos Pirineus</option>
+                    </select><br><br>
+
+                    <label>Quando foi fundada a cidade de Pau?</label><br>
+                    <input type="radio" id="ano_900" name="fundacao" value="900">
+                    <label for="ano_900">Ano 900</label><br>
+                    <input type="radio" id="ano_1200" name="fundacao" value="1200">
+                    <label for="ano_1200">Ano 1200</label><br>
+                    <input type="radio" id="ano_1500" name="fundacao" value="1500">
+                    <label for="ano_1500">Ano 1500</label><br><br>
+
+                    <label>Quais atividades são populares em Pau?</label><br>
+                    <input type="checkbox" id="Esquiagem" name="atividades" value="Esquiagem">
+                    <label for="Esquiagem">Esquiagem</label><br>
+                    <input type="checkbox" id="gastronomia" name="atividades" value="gastronomia">
+                    <label for="gastronomia">Gastronomia</label><br>
+                    <input type="checkbox" id="ciclismo" name="atividades" value="ciclismo">
+                    <label for="ciclismo">Ciclismo</label><br>
+                    <input type="checkbox"  id="grandprix" name="atividades" value="grandprix">
+                    <label for="grandprix">Grand Prix</label><br><br>
+
+                    <label for="visita">Escolha uma data para a sua visita a Pau:</label><br>
+                    <input type="date" id="visita" name="visita" required><br><br>
+
+                    <label for="hora_visita">Qual horário você prefere para visitar o Castelo de Pau?</label><br>
+                    <input type="time" id="hora_visita" name="hora_visita"><br><br>
+
+                    <label for="cor">Escolha uma cor que represente Pau:</label><br>
+                    <input type="color" id="cor" name="cor" value="#008080"><br><br>
+
+                    <label for="quantidade_visitas">Quantas vezes já visitou Pau?</label><br>
+                    <input type="number" id="quantidade_visitas" name="quantidade_visitas" min="0" max="200" step="1" value="0"><br><br>
+
+                    <label for="satisfacao">Quão satisfeito você ficou com a visita à cidade?</label><br>
+                    <input type="range" name="satisfacao" min="0" max="200"  value="100" step="1"><br><br>
+
+                    <p>Envie uma foto de Pau</p>
+                    <input type="file" name="foto" accept="image/*"><br>
+
+                    <input type="reset" value="Limpar formulário">
+                    <input type="submit" value="Enviar">
+
+                </fieldset>
+
+            
+            </form>
+        </main>
+
+        <footer>
+            <p>DIW 2024</p>
+        </footer>
+    </body>
+</html>

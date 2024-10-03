@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Intenção de Viagem</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Registe sua intenção de viagem à nossa cidade</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimedia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+        </nav>
+        <img src="images/pau.jpeg" alt="Imagem da cidade">
+
+        <main>
+            <h2>Formulário de Intenção de Viagem</h2>
+            <form method="get" action="https://postman-echo.com/get">
+
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" size="30" maxlength="50" required autofocus><br><br>
+
+                    <label for="sobrenome">Apelido:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu apelido" size="30" maxlength="50" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@example.com" autocomplete="email" required><br><br>
+                </fieldset>
+
+                <!-- Informações de Viagem -->
+                <fieldset>
+                    <legend>Informações da Viagem</legend>
+
+                    <label for="data_partida">Data de Partida:</label>
+                    <input type="date" id="data_partida" name="data_partida" required><br><br>
+
+                    <label for="data_regresso">Data de Regresso:</label>
+                    <input type="date" id="data_regresso" name="data_regresso" required><br><br>
+
+                    <label for="num_passageiros">Número de Passageiros:</label>
+                    <input type="number" id="num_passageiros" placeholder="0-100" name="num_passageiros" min="1" max="100" required><br><br>
+
+                    <label for="transporte">Meio de Transporte Favorito:</label>
+                    <select id="transporte" name="transporte" required>
+                        <option value="carro">Carro</option>
+                        <option value="comboio">Comboio</option>
+                        <option value="aviao">Avião</option>
+                        <option value="heli">Helicoptero</option>
+                        <option value="pes">Pés</option>
+                        <option value="trotinete">Trotinete</option>
+                        <option value="barco">Barco</option>
+                        <option value="autocarro">Autocarro</option>
+                    </select><br><br>
+
+                    <label>Serviço Desejado:</label><br>
+                    <input type="radio" id="basico" name="servico" value="basico" required>
+                    <label for="basico">Básico</label><br>
+                    <input type="radio" id="premium" name="servico" value="premium" required>
+                    <label for="premium">Premium</label><br><br>
+
+                    <label for="pedidos_especiais">Pedidos Especiais:</label><br>
+                    <textarea id="pedidos_especiais" name="pedidos_especiais" placeholder="Escreva qualquer pedido especial..." maxlength="300" rows="4" cols="50"></textarea><br><br>
+
+                    <label for="valor_por_pessoa">Valor esperado por pessoa e por dia (em €):</label>
+                    <input type="number" id="valor_por_pessoa" name="valor_por_pessoa" min="1" step="0.01" required><br><br>
+
+                    <input type="reset" value="Limpar formulário">
+                    <input type="submit" value="Enviar">
+                </fieldset>
+            </form>
+        </main>
+
+        <footer>
+            <p>DIW 2024</p>
+        </footer>
+    </body>
+</html>

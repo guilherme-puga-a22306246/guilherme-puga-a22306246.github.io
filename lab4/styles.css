@@ -1,0 +1,21 @@
+header{
+    background-color: #8B4513;
+}
+
+body {
+    background-color: #F5F5DC;
+}
+
+nav{
+    background-color: #212121;
+    color: #ffff;
+    a {color: white};
+}
+footer{
+    background-color: #212121;
+    color: #ffff;
+}
+main {
+    border: #F5F5DC;
+    border-radius: 20px;
+}
