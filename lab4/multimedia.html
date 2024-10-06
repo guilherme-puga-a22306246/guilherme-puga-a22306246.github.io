@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Multimédia</title>
-        <link rel="stylesheet" href="styles.css" />
-        <style>
-            .miniaturas {
-                margin-bottom: 20px;
-            }
-            .miniaturas img {
-                margin-right: 10px;
-            }
-            iframe {
-                display: block;
-                margin-top: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>A minha Cidade</h1>
-        </header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="local.html">Localização</a>
-            <a href="multimedia.html">Multimedia</a>
-            <a href="info.html">Informação</a>
-            <a href="quizz.html">Quizz</a>
-            <a href="viagem.html">Viagem</a>
-        </nav>
-        <img src="images/pau.jpeg" alt="Cidade de Pau, França">
-        <h2>Multimédia</h2>
-        <p>
-            <a href="#fotografias">Fotografias</a>
-            <a href="#video">Vídeo</a>
-            <a href="#poema">Poema</a>
-        </p>
+<head>
+    <meta charset="UTF-8">
+    <title>Multimédia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .miniaturas {
+            margin-bottom: 20px;
+        }
+        .miniaturas img {
+            margin-right: 10px;
+        }
+        iframe {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A minha Cidade</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home<span class="tooltip">Ir para a página inicial</span></a>
+        <a href="local.html">Localização<span class="tooltip">Veja onde estamos</span></a>
+        <a href="multimedia.html">Multimédia<span class="tooltip">Conteúdos multimédia</span></a>
+        <a href="info.html">Informação<span class="tooltip">Informações adicionais</span></a>
+        <a href="quizz.html">Quizz<span class="tooltip">Teste os seus conhecimentos</span></a>
+        <a href="viagem.html">Viagem<span class="tooltip">Planos de viagem</span></a>
+    </nav>
+    <h2>Multimédia</h2>
+    <p>
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poema">Poema</a>
+    </p>
+
+    <section id="fotografias">
         <h3>Fotografias</h3>
-        <main>
+        <div class="miniaturas">
             <a href="images/pau_grande.jpeg" target="fotografia"><img src="images/pau_pequeno.jpeg" alt="Pau, França"></a> 
             <a href="images/pau_grande2.jpeg" target="fotografia"><img src="images/pau_pequeno2.jpeg" alt="Pau, França"></a> 
             <a href="images/pau_grande3.jpeg" target="fotografia"><img src="images/pau_pequeno3.jpeg" alt="Pau, França"></a>
+        </div>
+        <iframe name="fotografia" width="800" height="600" frameborder="0" src="images/pau_grande.jpeg"></iframe>
+    </section>
 
-            <!-- Iframe para exibir as fotografias grandes -->
-            <iframe name="fotografia" width="800" height="600" frameborder="0" src="images/pau_grande.jpeg"></iframe>
+    <section id="video">
+        <h3>Vídeo</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cQSp4jFt50E?si=fq7gAUQ5EhM0JbkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
 
-            <h3>Vídeo</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/cQSp4jFt50E?si=fq7gAUQ5EhM0JbkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <section id="poema">
+        <h3>Poema</h3>
+        <h4>Pau e Pirinéus</h4>
+        <pre>
+        Entre montanhas e o azul do mar,
+        Ergue-se Pau, no seu verde sonhar.
+        Nos Pirenéus, guarda em segredo,
+        Paisagens de encanto, histórias sem medo.
+            
+        O Gave de Pau, tranquilo a correr,
+        Conta lendas de reis, de vida e viver.
+        As montanhas abraçam, o céu beija o chão,
+        Numa dança de brisa e de emoção.
+            
+        Caminhos de pedra, ruas de luz,
+        Onde o tempo pára, e a alma reluz.
+        Pau, cidade de sonhos, de céu a tocar,
+        Entre França e Espanha, no seu doce bailar.
+        </pre>
+    </section>
 
-            <h3>Poema</h3>
-            <p>
-                Entre montanhas e o azul do mar,<br>
-                Ergue-se Pau, no seu verde sonhar.<br>
-                Nos Pirenéus, guarda em segredo,<br>
-                Paisagens de encanto, histórias sem medo.<br>
-                
-                O Gave de Pau, tranquilo a correr,<br>
-                Conta lendas de reis, de vida e viver.<br>
-                As montanhas abraçam, o céu beija o chão,<br>
-                Numa dança de brisa e de emoção.<br>
-                
-                Caminhos de pedra, ruas de luz,<br>
-                Onde o tempo pára, e a alma reluz.<br>
-                Pau, cidade de sonhos, de céu a tocar,<br>
-                Entre França e Espanha, no seu doce bailar.
-            </p>
-        </main>
-        <footer>
-            <p>DIW 2024</p>
-        </footer>
-    </body>
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+</body>
 </html>

@@ -4,20 +4,32 @@
         <meta charset="UTF-8">
         <title>Cidade</title>
         <link rel="stylesheet" href="styles.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     </head>
     <body>
         <header>
             <h1>A minha Cidade</h1>
         </header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="local.html">Localização</a>
-            <a href="multimedia.html">Multimedia</a>
-            <a href="info.html">Informação</a>
-            <a href="quizz.html">Quizz</a>
-            <a href="viagem.html">Viagem</a>
+            <a href="index.html">Home<span class="tooltip">Ir para a página inicial</span></a>
+            <a href="local.html">Localização<span class="tooltip">Veja onde estamos</span></a>
+            <a href="multimedia.html">Multimédia<span class="tooltip">Conteúdos multimédia</span></a>
+            <a href="info.html">Informação<span class="tooltip">Informações adicionais</span></a>
+            <a href="quizz.html">Quizz<span class="tooltip">Teste os seus conhecimentos</span></a>
+            <a href="viagem.html">Viagem<span class="tooltip">Planos de viagem</span></a>
         </nav>
-        <img src="images/pau.jpeg" alt="Cidade de Pau, França">
+        <div class="gallery">
+            <a href="images/pau_grande.jpeg" data-lightbox="galeria" data-title="Cidade de Pau, França">
+                <img src="images/pau_grande.jpeg" alt="Cidade de Pau" width="400">
+            </a>
+            <a href="images/pau_grande2.jpeg" data-lightbox="galeria" data-title="Paisagem dos Pirineus">
+                <img src="images/pau_grande2.jpeg" alt="Paisagem dos Pirineus" width="400">
+            </a>
+            <a href="images/pau_grande3.jpeg" data-lightbox="galeria" data-title="Arquitetura de Pau">
+                <img src="images/pau_grande3.jpeg" alt="Arquitetura de Pau" width="400">
+            </a>
+        </div>
         <main>
             <h2>Home</h2>
             <p>
