@@ -36,6 +36,8 @@ body {
     background-color: rgb(198, 198, 198);
     background-size: cover;
     background-position: center;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -97,7 +99,7 @@ footer {
     background-color: #212121;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 64px;
 }
 
 #fotografias h3, #video h3, #poema h3{
