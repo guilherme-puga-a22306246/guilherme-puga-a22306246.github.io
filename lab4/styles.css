@@ -17,6 +17,12 @@ html {
     -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
+    
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 label {
     font-size: small;
@@ -32,12 +38,14 @@ label, input {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--light-gray);
-    background-color: rgb(198, 198, 198);
     background-size: cover;
     background-position: center;
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 header {
@@ -94,12 +102,16 @@ nav a:hover .tooltip {
     cursor: pointer;                 
     width: 300px;                    
 }
-
+main {
+    flex: 1;
+    padding: 20px;
+}
 footer {
     background-color: #212121;
     color: #fff;
     text-align: center;
-    padding: 64px;
+    padding: 10px;
+    margin-top: auto;
 }
 
 #fotografias h3, #video h3, #poema h3{
