@@ -90,6 +90,7 @@ footer {
     margin-top: auto;
 }
 
+
 .list-container {
     background-color: var(--white);
     padding: 20px;
@@ -129,20 +130,19 @@ footer {
     padding: 15px;
     border-radius: var(--global-radius);
     margin-bottom: 15px;
-    color: var(--white);
+    color: var(--black);
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     display: block;        
     max-width: 20%;                
     text-align: left;
 }
 
+
 .fotos {
-    border-radius: var(--global-radius);    
-    width: 100%;                           
-    height: 100%;                         
-    box-shadow: 4px 8px rgba(0, 0, 0, 0.3); 
-    margin: 20px 0;                      
-    display: inline-block;                   
+    border-radius: var(--global-radius);  
+    display: block;                          
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.3);                                       
 }
 
 
