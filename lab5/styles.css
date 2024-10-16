@@ -8,6 +8,7 @@ html {
     --medium-gray: #c3c3c3;
     --light-gray: #f5f5f5;
     --white: #fefefe;
+    --castanho: #8B4513;
     --global-radius: 32px;
     --rc-global-radius: 32px;
     font-family: "Avenir Next", Arial, sans-serif;
@@ -124,6 +125,14 @@ footer {
 .title-box h3 {
     margin: 0;  
 }
+ul {
+    list-style-type: square;
+}
+
+.listas-ordenadas ol li,
+.listas-ordenadas ul li {
+    font-size: 2em;
+}
 
 .listas-ordenadas {
     background-color: var(--white); 
@@ -136,6 +145,15 @@ footer {
     display: block;        
     max-width: 20%;                
     text-align: left;
+}
+
+.listas-ordenadas ol li:nth-child(even) {
+    color: var(--castanho);
+}
+
+.listas-ordenadas ol {
+    list-style-type: lower-roman;
+    padding-left: 20px;
 }
 
 

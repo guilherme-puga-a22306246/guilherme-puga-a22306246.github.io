@@ -1,0 +1,121 @@
+* {
+    font-family: sans-serif;
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --black: #1d1d1c;
+    --dark-gray: #555555;
+    --medium-gray: #c3c3c3;
+    --light-gray: #f5f5f5;
+    --white: #fefefe;
+    --blue: #007BFF; /* Azul para links */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--light-gray); /* Fundo claro */
+    color: var(--black); /* Texto em preto */
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    padding: 0 20px; /* Espaçamento interno */
+    z-index: 1000;
+    width: 100%; /* Garante que o header ocupe toda a largura da tela */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para o cabeçalho */
+}
+
+h1 {
+    font-size: 2em; /* Tamanho do título */
+    font-weight: bold; /* Negrito para o título */
+}
+
+nav {
+    display: flex;
+    gap: 20px; /* Espaço entre os links */
+}
+
+nav a {
+    color: #808080; /* Cor cinza para os links */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 20px; /* Espaço ao redor do texto */
+    position: relative; /* Necessário para o pseudo-elemento */
+    transition: color 0.2s; /* Transição suave para a cor do texto */
+}
+
+nav a:hover {
+    color: white; /* Altera a cor do texto para branco no hover */
+}
+
+nav a:hover::after {
+    content: ""; /* Adiciona um conteúdo vazio */
+    position: absolute;
+    bottom: 0; /* Fica no fundo do link */
+    left: 0;
+    right: 0;
+    height: 100%; /* Mantém a altura do fundo */
+    background-color: #808080; /* Cor de fundo cinza */
+    z-index: -1; /* Envia o fundo para trás do texto */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: height 0.2s ease; /* Transição suave */
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Empilha as seções verticalmente */
+    height: 90vh; /* Mantém a altura do main */
+    background: var(--light-gray); /* Cor de fundo clara para o main */
+}
+
+article {
+    width: 100vw; /* Largura total da tela */
+    height: 100vh; /* Altura de 50% da tela */
+    display: flex; /* Ativando flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 0; /* Espaçamento entre os artigos */
+    border-radius: 15px; /* Bordas arredondadas */
+}
+
+
+#poema {
+    background-color: #e0f7fa; /* Cor de fundo do poema */
+}
+
+#paisagem {
+    background-color: #ffe0b2; /* Cor de fundo da paisagem */
+}
+
+#cidades {
+    background-color: #c8e6c9; /* Cor de fundo das cidades */
+}
+
+.poema-container {
+    max-width: 600px; /* Limita a largura do poema */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.poema {
+    font-size: 1.5em; /* Tamanho da fonte do poema */
+    font-weight: normal; /* Peso normal para o texto do poema */
+    margin-bottom: 10px; /* Espaço abaixo do poema */
+}
+
+.autor {
+    font-weight: bold; /* Peso em negrito para o nome do autor */
+    font-style: italic; /* Estilo em itálico para o nome do autor */
+    font-size: 1.2em; /* Tamanho da fonte do autor */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-gray);
+    color: var(--white);
+    height: 10vh;
+}
