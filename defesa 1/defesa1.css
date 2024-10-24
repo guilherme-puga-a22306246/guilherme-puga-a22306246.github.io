@@ -1,0 +1,95 @@
+body {
+    background-color: black;
+}
+
+body h1{
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: gray;
+    margin: 10px;
+    padding: 10px;
+    min-height: 100%;
+}
+
+
+
+
+.inicio{
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    min-height: 100%;
+    border-radius: 10px;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.laboratorio{
+    display: block;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+}
+
+.laboratorio nav {
+    display: block;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+}
+
+.laboratorio nav :nth-child(even){
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.laboratorio nav :nth-child(odd){
+    background-color: rgb(69, 69, 69);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+footer{
+    background-color: #212121;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.introducao h1{
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+}
+
+.introducao{
+    display: block;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+}
