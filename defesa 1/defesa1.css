@@ -78,12 +78,13 @@ footer{
 .introducao h1{
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+    text-align: left;
 }
 
 .introducao{
     display: block;
     justify-content: space-between;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: white;
