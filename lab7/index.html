@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interatividade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="index.html">Lab 7</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="box" id="hoverBox" onmouseover="changeHoverMessage()" onmouseout="resetHoverMessage()">
+            1. Passa por aqui!
+        </div>
+
+        <div class="box color-buttons">
+            2. Pinta-me!
+            <button onclick="changeColor('red')">Red</button>
+            <button onclick="changeColor('green')">Green</button>
+            <button onclick="changeColor('blue')">Blue</button>
+        </div>
+
+        <div class="box">
+            3. Experimenta escrever...
+            <input type="text" id="textInput">
+        </div>
+
+        <div class="box">
+            4. Escolha uma cor em inglês:
+            <input type="text" id="colorInput">
+            <button onclick="submitColor()">submeter</button>
+        </div>
+
+        <div class="box">
+            5. Conta!
+            <button onclick="count()">Conta</button>
+            <h1>0</h1>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
