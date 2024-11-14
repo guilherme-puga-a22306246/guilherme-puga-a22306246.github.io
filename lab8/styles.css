@@ -1,0 +1,30 @@
+body {
+    background-color: #e6e6fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin: 20px;
+}
+
+.box {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#hoverBox {
+    color: #333;
+}
+
+.color-buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.count {
+    font-weight: bold;
+}
