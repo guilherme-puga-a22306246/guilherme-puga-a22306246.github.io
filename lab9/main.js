@@ -1,15 +1,68 @@
+// Array para armazenar os produtos no carrinho
 let cart = [];
 
-// Adiciona produto ao carrinho
-const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const productId = button.dataset.id;
-    const product = getProductById(productId);
-    addToCart(product);
-    updateCartDisplay();
+// Adiciona evento aos botões de adicionar ao carrinho quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+  // Gera os produtos
+  gerarProdutos();
+
+  // Adiciona event listeners para os botões de adicionar ao carrinho
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = button.getAttribute('data-id');
+      const product = getProductById(productId);
+      
+      if (product) {
+        addToCart(product);
+        updateCartDisplay();
+      }
+    });
+  });
+
+  // Adiciona event listener para remoção de produtos do carrinho (delegação de evento)
+  document.querySelector('.cart-container').addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove-from-cart')) {
+      const productId = event.target.getAttribute('data-id');
+      removeFromCart(productId);
+      updateCartDisplay();
+    }
   });
 });
+
+// Função para obter o produto pelo ID
+function getProductById(id) {
+  return produtos.find(product => product.id == id);
+}
+
+// Função para adicionar produto ao carrinho
+function addToCart(product) {
+  // Verifica se o produto já está no carrinho
+  const existingProduct = cart.find(item => item.id === product.id);
+  
+  if (existingProduct) {
+    // Se já existir, incrementa a quantidade
+    existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+  } else {
+    // Se não existir, adiciona com quantidade 1
+    cart.push({...product, quantity: 1});
+  }
+}
+
+// Função para remover produto do carrinho
+function removeFromCart(productId) {
+  const index = cart.findIndex(item => item.id == productId);
+  
+  if (index !== -1) {
+    // Se a quantidade for maior que 1, decrementa
+    if (cart[index].quantity > 1) {
+      cart[index].quantity -= 1;
+    } else {
+      // Se for 1, remove completamente do carrinho
+      cart.splice(index, 1);
+    }
+  }
+}
 
 // Atualiza a exibição do carrinho
 function updateCartDisplay() {
@@ -17,7 +70,7 @@ function updateCartDisplay() {
   cartContainer.innerHTML = '';
 
   if (cart.length === 0) {
-    cartContainer.innerHTML = '<p>Seu cesto está vazio</p>';
+    cartContainer.innerHTML = '<p class="cart-empty-message">Seu cesto está vazio</p>';
   } else {
     cart.forEach(product => {
       const productElement = document.createElement('div');
@@ -26,12 +79,13 @@ function updateCartDisplay() {
         <img src="${product.image}" alt="${product.title}">
         <h3>${product.title}</h3>
         <p>Custo: ${product.price.toFixed(2)} €</p>
+        <p>Quantidade: ${product.quantity}</p>
         <button class="remove-from-cart" data-id="${product.id}">Remover</button>
       `;
       cartContainer.appendChild(productElement);
     });
 
-    const totalPrice = cart.reduce((total, product) => total + product.price, 0);
+    const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
     const totalPriceElement = document.createElement('p');
     totalPriceElement.classList.add('cart-total');
     totalPriceElement.textContent = `Total: ${totalPrice.toFixed(2)} €`;
@@ -39,16 +93,7 @@ function updateCartDisplay() {
   }
 }
 
-// Função auxiliar para obter o produto pelo ID
-function getProductById(id) {
-  return produtos.find(product => product.id == id);
-}
-
-// Adiciona o produto ao carrinho
-function addToCart(product) {
-  cart.push(product);
-}
-
+// Função para gerar produtos (mantida igual)
 function gerarProdutos() {
   const containerProdutos = document.querySelector('.products-container');
   
@@ -73,6 +118,3 @@ function gerarProdutos() {
     containerProdutos.appendChild(produtoElemento);
   });
 }
-
-// Chama a função quando o DOM estiver completamente carregado
-document.addEventListener('DOMContentLoaded', gerarProdutos);
