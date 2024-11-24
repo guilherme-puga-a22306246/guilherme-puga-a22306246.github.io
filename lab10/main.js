@@ -1,3 +1,40 @@
+// Variável global para armazenar os produtos
+let produtos = [];
+
+// Função para buscar produtos da API
+async function fetchProdutos() {
+  try {
+    // URL da API de produtos
+    const url = 'https://deisishop.pythonanywhere.com/products/';
+    
+    // Realiza a requisição usando fetch
+    const resposta = await fetch(url);
+    
+    // Verifica se a resposta é bem-sucedida
+    if (!resposta.ok) {
+      throw new Error(`Erro HTTP: ${resposta.status}`);
+    }
+    
+    // Converte a resposta para JSON
+    produtos = await resposta.json();
+    
+    // Gera os produtos na página após carregá-los
+    gerarProdutos();
+  } catch (erro) {
+    console.error('Erro ao buscar produtos:', erro);
+    
+    // Exibe mensagem de erro para o usuário
+    const containerProdutos = document.querySelector('.products-container');
+    containerProdutos.innerHTML = `
+      <div class="erro-carregamento">
+        <p>Não foi possível carregar os produtos.</p>
+        <p>Erro: ${erro.message}</p>
+        <button onclick="fetchProdutos()">Tentar Novamente</button>
+      </div>
+    `;
+  }
+}
+
 // Array para armazenar os produtos no carrinho
 let cart = [];
 
@@ -6,12 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Carrega o carrinho salvo no localStorage
   loadCartFromLocalStorage();
 
-  // Gera os produtos
-  gerarProdutos();
+  // Busca os produtos da API
+  fetchProdutos();
 
   // Atualiza a exibição do carrinho com os itens salvos
   updateCartDisplay();
+});
 
+// Event listener para adicionar ao carrinho (movido para dentro de fetchProdutos())
+function setupAddToCartListeners() {
   // Adiciona event listeners para os botões de adicionar ao carrinho
   const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
   addToCartButtons.forEach(button => {
@@ -38,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
       saveCartToLocalStorage();
     }
   });
-});
+}
 
 // Função para salvar o carrinho no localStorage
 function saveCartToLocalStorage() {
@@ -99,16 +139,16 @@ function updateCartDisplay() {
       const productElement = document.createElement('div');
       productElement.classList.add('cart-item');
       productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.title}">
-        <h3>${product.title}</h3>
-        <p>Custo: ${product.price.toFixed(2)} €</p>
+        <img src="${product.imagem}" alt="${product.nome}">
+        <h3>${product.nome}</h3>
+        <p>Custo: ${product.preco.toFixed(2)} €</p>
         <p>Quantidade: ${product.quantity}</p>
         <button class="remove-from-cart" data-id="${product.id}">Remover</button>
       `;
       cartContainer.appendChild(productElement);
     });
 
-    const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+    const totalPrice = cart.reduce((total, product) => total + (product.preco * product.quantity), 0);
     const totalPriceElement = document.createElement('p');
     totalPriceElement.classList.add('cart-total');
     totalPriceElement.textContent = `Total: ${totalPrice.toFixed(2)} €`;
@@ -116,7 +156,7 @@ function updateCartDisplay() {
   }
 }
 
-// Função para gerar produtos (mantida igual)
+// Função para gerar produtos a partir da API
 function gerarProdutos() {
   const containerProdutos = document.querySelector('.products-container');
   
@@ -130,14 +170,17 @@ function gerarProdutos() {
     produtoElemento.classList.add('product');
     
     produtoElemento.innerHTML = `
-      <img src="${produto.image}" alt="${produto.title}">
-      <h2>${produto.title}</h2>
-      <p class="product-price">Custo total: ${produto.price.toFixed(2)} €</p>
-      <p class="product-description">${produto.description}</p>
+      <img src="${produto.imagem}" alt="${produto.nome}">
+      <h2>${produto.nome}</h2>
+      <p class="product-price">Custo total: ${produto.preco.toFixed(2)} €</p>
+      <p class="product-description">${produto.descricao}</p>
       <button class="add-to-cart-btn" data-id="${produto.id}">Adicionar ao Cesto</button>
     `;
     
     // Adiciona o elemento de produto ao container
     containerProdutos.appendChild(produtoElemento);
   });
+
+  // Configura os listeners de adicionar ao carrinho após gerar os produtos
+  setupAddToCartListeners();
 }
