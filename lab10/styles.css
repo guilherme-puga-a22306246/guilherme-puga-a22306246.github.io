@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #d3d3d3;
+    background-image: url('https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_1280.png');
 }
 
 header {
@@ -177,6 +177,130 @@ p.cart-total {
     font-size: 1.2rem;
     color: #007bff;
 }
+
+.checkout-form {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+#discountCode {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.buy-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+}
+
+.student-checkbox {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#discount-input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.purchase-result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    display: none;
+}
+
+.purchase-result.success {
+    display: block;
+    border-left: 5px solid #28a745;
+}
+
+.purchase-result.error {
+    display: block;
+    border-left: 5px solid #dc3545;
+}
+
+.payment-reference {
+    font-size: 1.2em;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.final-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #28a745;
+    margin: 15px 0;
+}
+
+.payment-info {
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter label {
+    font-weight: bold;
+}
+
+.filter select,
+.filter input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.no-results {
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+
+
 
 footer {
     background-color: #333;
