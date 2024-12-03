@@ -277,9 +277,9 @@ async function realizarCompra() {
         if (response.ok) {
             mostrarSucesso(data);
             // Limpar o carrinho após compra bem-sucedida
-            // cart = []; // Removido para manter os itens no carrinho
-            // saveCartToLocalStorage(); // Removido para manter os itens no carrinho
-            updateCartDisplay();
+            cart = []; // Adicionado para limpar o carrinho
+            saveCartToLocalStorage(); // Adicionado para salvar o carrinho vazio no localStorage
+            updateCartDisplay(); // Atualiza a exibição do carrinho
         } else {
             // Se houver erro, mas ainda houver itens que podem ser comprados, apenas exiba o total
             const totalCost = data.totalCost; // Total retornado da API
