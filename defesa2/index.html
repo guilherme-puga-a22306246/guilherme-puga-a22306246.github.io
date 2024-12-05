@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecione os seus Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Luxenta</h1>
+        <nav>
+            <ul>
+                <li><a href="#products-container">Produtos</a></li>
+                <li><a href="#cart-section">Cesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="filters-container">
+            <div class="filter">
+                <label>Filtrar</label>
+                <select id="categoryFilter">
+                    <option value="all">Todas as categorias</option>
+                    <option value="tshirt">T-shirts</option>
+                    <option value="caneca">Canecas</option>
+                    <option value="meia">Meias</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label>Ordenar</label>
+                <select id="orderFilter">
+                    <option value="default">Ordenar pelo preço</option>
+                    <option value="price-asc">Preço: Crescente</option>
+                    <option value="price-desc">Preço: Decrescente</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label>Procurar</label>
+                <input type="text" id="searchInput" placeholder="pesquise por produto">
+            </div>
+        </div>
+        <section id="products-container" class="products-container">
+            
+        </section>
+
+        <section id="cart-section" class="cart-section">
+            <h2 class="cart-title">Seu Carrinho</h2>
+            <article class="cart-container">
+                <!-- Itens do carrinho serão adicionados dinamicamente -->
+                <p class="cart-empty-message">Seu carrinho está vazio</p>
+            </article>
+            
+            <form class="checkout-form">
+                <label class="student-checkbox">
+                    <input type="checkbox" id="deisi-checkbox"> És estudante do DEISI?
+                </label>
+                <input type="text" id="discount-input" placeholder="Cupão de desconto">
+                <input type="text" id="address" placeholder="Morada">
+                <button type="button" id="botao-comprar" class="buy-button">Comprar</button>
+                <button type="button" id="botao-adicionar-todos">Adicionar todos</button>
+            </form>
+            
+            <section id="resultado-compra" class="purchase-result"></section>
+                <!-- Usar um parágrafo para exibir o total -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja Online</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="produtos.js"></script>
+</body>
+</html>
