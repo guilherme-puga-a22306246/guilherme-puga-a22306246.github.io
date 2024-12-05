@@ -57,8 +57,6 @@ function adicionarTodos() {
     const botaoAdicionar = document.querySelector('#botao-adicionar-todos');
 
     
-
-    cart.push(produtos);
 }
 
 // Event listener para adicionar ao carrinho
@@ -179,9 +177,9 @@ function filterProducts() {
   let filteredProducts = [...produtos];
 
   if (orderFilter === 'price-asc') {
-    filteredProducts.sort((a, b) => (a.price || 0) - (b.price || 0));
+    filteredProducts.sort((a, b) => (a.rating || 0) - (b.rating || 0));
 } else if (orderFilter === 'price-desc') {
-    filteredProducts.sort((a, b) => (b.price || 0) - (a.price || 0));
+    filteredProducts.sort((a, b) => (b.rating || 0) - (a.rating || 0));
 }
 
   // Aplica filtro por categoria
